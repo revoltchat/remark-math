@@ -1,6 +1,6 @@
 /**
  * @typedef {import('hast').Root} Root
- * @typedef {import('katex').KatexOptions} Options
+ * @typedef {import('katex').KatexOptions & { maxLength: number }} Options
  */
 
 import katex from 'katex'
@@ -41,6 +41,10 @@ export default function rehypeKatex(options) {
       let result
 
       try {
+        if (settings.maxLength && value.length > settings.maxLength) {
+          throw new Error("Exceeds maximum permitted length.");
+        }
+
         result = katex.renderToString(
           value,
           assign({}, settings, {displayMode, throwOnError: true})
