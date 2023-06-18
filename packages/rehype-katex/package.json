@@ -1,6 +1,6 @@
 {
   "name": "@revoltchat/rehype-katex",
-  "version": "6.0.3",
+  "version": "6.0.3-patch.1",
   "description": "rehype plugin to transform inline and block math with KaTeX",
   "license": "MIT",
   "keywords": [
@@ -42,7 +42,7 @@
     "@types/katex": "^0.14.0",
     "hast-util-from-html-isomorphic": "^1.0.0",
     "hast-util-to-text": "^3.1.0",
-    "katex": "^0.16.0",
+    "katex": "^0.16.7",
     "unist-util-visit": "^4.0.0"
   },
   "scripts": {
